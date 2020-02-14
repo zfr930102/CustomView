@@ -7,5 +7,15 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
+    <declare-styleable name="ArcGradeViewStyle">
+        <attr name="arc_back_color" format="color"></attr>
+        <attr name="arc_grade_color" format="color" />
+        <attr name="arc_back_paint_size" format="integer" />
+        <attr name="arc_rectF_left" format="dimension" />
+        <attr name="arc_rectF_top" format="dimension"/>
+        <attr name="arc_rectF_right" format="dimension" />
+        <attr name="arc_rectF_bottom" format="dimension" />
+        <attr name="arc_start_angle" format="integer"></attr>
+        <attr name="arc_end_angle" format="integer" />
+    </declare-styleable>
 </resources>
