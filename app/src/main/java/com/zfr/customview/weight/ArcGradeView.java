@@ -36,7 +36,6 @@ public class ArcGradeView extends View {
     private int arcEndAngle;
     private RectF rectF;
     private int currentAngle;
-
     public ArcGradeView(Context context) {
         this(context,null);
     }
@@ -112,7 +111,7 @@ public class ArcGradeView extends View {
     }
 
     private void drawGradeArc(Canvas canvas) {
-//当前的角度可以拿到弧度
+        //当前的角度可以拿到弧度
         double angle = currentAngle * Math.PI / 180;
         Log.e(ArcGradeView.class.getSimpleName(), "当前角度" + currentAngle +"\t转换后的角度" + angle);
         double sin = Math.sin(angle);
@@ -155,5 +154,15 @@ public class ArcGradeView extends View {
             }
         });
         valueAnimator.start();*/
+    }
+
+    /**
+     * 设置进度
+     *
+     * @param process 0 - 1
+     */
+    public void setProcess(float process) {
+        currentAngle = (int) (process * arcEndAngle);
+        postInvalidate();
     }
 }
