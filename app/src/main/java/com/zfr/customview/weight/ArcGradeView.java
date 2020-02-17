@@ -137,10 +137,29 @@ public class ArcGradeView extends View {
         postInvalidate();
     }
 
+    /**
+     * 开始动画的方法
+     *
+     * @param startAngle 动画开始的角度
+     * @param endAngle 动画结束的角度
+     */
     public void startAnimator(int startAngle, int endAngle) {
+        startAnimator(startAngle,endAngle,-1,-1);
+    }
+
+    /**
+     * 开始动画的方法 -- 带有时间设置
+     *
+     * @param startAngle 动画开始的时间
+     * @param endAngle 动画结束的时间
+     * @param duration 动画执行的时间
+     * @param startDelayTime 动画延时执行的时间
+     */
+    public void startAnimator(int startAngle, int endAngle, int duration, int startDelayTime) {
+
         ObjectAnimator currentAngle = ObjectAnimator.ofInt(this, "currentAngle", startAngle, endAngle);
-        currentAngle.setDuration(10000);
-        currentAngle.setStartDelay(1000);
+        currentAngle.setDuration(duration == -1 ? 10000 : duration);
+        currentAngle.setStartDelay(startDelayTime == -1 ? 1000 : startDelayTime);
         currentAngle.start();
         /*ValueAnimator valueAnimator = ValueAnimator.ofInt(startAngle, endAngle);
         valueAnimator.setDuration(10000);
