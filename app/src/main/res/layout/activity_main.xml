@@ -10,8 +10,6 @@
         android:id="@+id/agv"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:arc_rectF_left ="40dp"
-        app:arc_rectF_top = "40dp"/>
+        android:layout_width="360dp"
+        android:layout_height="360dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
